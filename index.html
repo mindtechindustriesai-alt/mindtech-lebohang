@@ -803,48 +803,6 @@
         }
 
         /* ============================================================
-           ECONOMICS HUB
-        ============================================================ */
-        .economics-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .economics-card {
-            background: rgba(0,0,0,0.2);
-            border-radius: 16px;
-            padding: 16px;
-            border: 1px solid var(--glass-border);
-        }
-
-        .economics-card h4 {
-            font-size: 0.8rem;
-            color: var(--gold);
-        }
-
-        .economics-card p {
-            font-size: 0.65rem;
-            color: var(--text-secondary);
-            margin-top: 8px;
-        }
-
-        .economics-card .tag {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 2px 12px;
-            border-radius: 30px;
-            background: rgba(255,215,0,0.1);
-            font-size: 0.5rem;
-            font-family: var(--font-mono);
-            color: var(--gold);
-        }
-
-        @media (max-width: 768px) {
-            .economics-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ============================================================
            FOOTER
         ============================================================ */
         .footer {
@@ -1030,7 +988,6 @@
         <button class="menu-btn active" data-section="dashboard" onclick="switchSection('dashboard')"><i class="fas fa-home"></i> Dashboard</button>
         <button class="menu-btn gold" data-section="library" onclick="switchSection('library')"><i class="fas fa-graduation-cap"></i> Study Library</button>
         <button class="menu-btn" data-section="chat" onclick="switchSection('chat')"><i class="fas fa-comments"></i> Luvuno AI</button>
-        <button class="menu-btn" data-section="economics" onclick="switchSection('economics')"><i class="fas fa-chart-line"></i> Economics Hub</button>
         <button class="menu-btn" data-section="tests" onclick="switchSection('tests')"><i class="fas fa-pencil-alt"></i> Tests</button>
         <button class="menu-btn" data-section="progress" onclick="switchSection('progress')"><i class="fas fa-chart-simple"></i> Progress</button>
     </div>
@@ -1045,7 +1002,7 @@
                 You are a <strong style="color:var(--quantum);">Quantum Engineer</strong> at MindTech Industries.
                 Your development pathway is designed to build upward from your foundation in
                 <strong>circuit design, entanglement verification, and QKD</strong> — progressing through
-                <strong>IT systems, economics, data intelligence, artificial intelligence, and ultimately advanced quantum technology.</strong>
+                <strong>IT systems, data intelligence, artificial intelligence, and ultimately advanced quantum technology.</strong>
             </p>
             <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
                 <span style="background:rgba(0,180,216,0.1);padding:4px 16px;border-radius:30px;font-size:0.7rem;border:1px solid rgba(0,180,216,0.2);"><i class="fas fa-check-circle" style="color:var(--success);"></i> Quantum Engineering</span>
@@ -1060,10 +1017,10 @@
                 <p style="font-size:0.7rem;color:var(--text-secondary);">Access your curated curriculum: CS50, AI, Quantum Physics, Quantum Computing, and more.</p>
                 <div style="margin-top:12px;"><span class="menu-btn" style="padding:4px 14px;font-size:0.6rem;">5 videos · 4 PDFs</span></div>
             </div>
-            <div class="glass-card" onclick="switchSection('economics')" style="cursor:pointer;">
-                <div class="card-header gold"><i class="fas fa-chart-line"></i><h3>📊 Economics Hub</h3></div>
-                <p style="font-size:0.7rem;color:var(--text-secondary);">Economics, business, trade, governance, and policy — powered by Luvuno.</p>
-                <div style="margin-top:12px;"><span class="menu-btn" style="padding:4px 14px;font-size:0.6rem;">6 modules</span></div>
+            <div class="glass-card" onclick="switchSection('chat')" style="cursor:pointer;">
+                <div class="card-header gold"><i class="fas fa-robot"></i><h3>💬 Luvuno AI</h3></div>
+                <p style="font-size:0.7rem;color:var(--text-secondary);">Your quantum engineering assistant — ask about circuits, QKD, entanglement, and more.</p>
+                <div style="margin-top:12px;"><span class="menu-btn" style="padding:4px 14px;font-size:0.6rem;">AI Tutor · Always On</span></div>
             </div>
         </div>
     </div>
@@ -1230,70 +1187,16 @@
         <div class="glass-card gold-border">
             <div class="card-header gold"><i class="fas fa-robot"></i><h3>💬 Luvuno AI — Quantum Engineering Assistant</h3></div>
             <p style="font-size:0.65rem;color:var(--text-secondary);margin-bottom:12px;font-family:var(--font-mono);">
-                Powered by <strong style="color:var(--gold);">Luvuno Quantum Economics</strong> · MQOS · MindTech Industries
+                Powered by <strong style="color:var(--gold);">Luvuno Quantum</strong> · MQOS · MindTech Industries
             </p>
             <div class="chat-messages" id="chatMessages">
                 <div class="chat-message ai">
-                    <strong>Luvuno AI:</strong> Welcome, Lebohang! I'm your quantum engineering assistant — powered by <strong style="color:var(--gold);">Luvuno Quantum Economics</strong> and the MQOS quantum engine. Ask me about circuit design, entanglement verification, QKD, economics, business, trade, governance, policy, AI, or quantum. I'm here to help you grow. 🚀
+                    <strong>Luvuno AI:</strong> Welcome, Lebohang! I'm your quantum engineering assistant — powered by <strong style="color:var(--gold);">Luvuno Quantum</strong> and the MQOS quantum engine. Ask me about circuit design, entanglement verification, QKD, AI, or quantum. I'm here to help you grow. 🚀
                 </div>
             </div>
             <div class="chat-input-group">
                 <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything...">
                 <button id="chatSendBtn" class="chat-send gold" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-         ECONOMICS HUB
-         ============================================================ -->
-    <div id="section-economics" class="section">
-        <div class="glass-card gold-border">
-            <div class="card-header gold"><i class="fas fa-chart-line"></i><h3>📊 Economics Hub</h3></div>
-            <p style="font-size:0.7rem;color:var(--text-secondary);margin-bottom:16px;">
-                Economics, business, trade, governance, and policy — powered by <strong style="color:var(--gold);">Luvuno Quantum Economics</strong> and MQOS.
-            </p>
-
-            <div class="economics-grid">
-                <div class="economics-card">
-                    <h4>📈 Microeconomics</h4>
-                    <p>Supply and demand, market structures, consumer behavior, production costs.</p>
-                    <span class="tag">Foundational</span>
-                </div>
-                <div class="economics-card">
-                    <h4>🌍 Macroeconomics</h4>
-                    <p>GDP, inflation, unemployment, fiscal policy, monetary policy, economic growth.</p>
-                    <span class="tag">Foundational</span>
-                </div>
-                <div class="economics-card">
-                    <h4>📊 Statistics & Econometrics</h4>
-                    <p>Data analysis, regression, hypothesis testing, economic modeling, forecasting.</p>
-                    <span class="tag">Data & Analysis</span>
-                </div>
-                <div class="economics-card">
-                    <h4>🏛️ Public Economics & Policy</h4>
-                    <p>Taxation, government spending, public goods, regulation, welfare economics.</p>
-                    <span class="tag">Policy & Governance</span>
-                </div>
-                <div class="economics-card">
-                    <h4>💼 International Trade & Finance</h4>
-                    <p>Exchange rates, balance of payments, trade agreements, global markets.</p>
-                    <span class="tag">Global Markets</span>
-                </div>
-                <div class="economics-card">
-                    <h4>🧠 Development Economics</h4>
-                    <p>Poverty, inequality, human development, sustainable growth, African economies.</p>
-                    <span class="tag">African Context</span>
-                </div>
-            </div>
-
-            <div style="margin-top:16px;padding:16px;background:rgba(0,180,216,0.06);border-radius:16px;border:1px solid rgba(0,180,216,0.15);">
-                <p style="font-size:0.7rem;color:var(--text-secondary);">
-                    <i class="fas fa-quote-left" style="color:var(--gold);"></i>
-                    <strong style="color:var(--gold);">Luvuno Quantum Economics</strong> — bridging economics, business, trade, governance, and policy with quantum-powered intelligence.
-                    <i class="fas fa-quote-right" style="color:var(--gold);"></i>
-                </p>
-                <p style="font-size:0.55rem;color:var(--text-dim);font-family:var(--font-mono);margin-top:4px;">⚛️ Powered by MQOS TERERAI v2.1 · CHSH S=2.76</p>
             </div>
         </div>
     </div>
@@ -1499,7 +1402,7 @@
                     <div style="margin:8px 0;">
                         <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:var(--text-secondary);"><span>IT Systems</span><span>Active</span></div>
                         <div class="progress-bar"><div style="width:70%;"></div></div>
-                        <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:var(--text-secondary);"><span>Economics</span><span>Started</span></div>
+                        <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:var(--text-secondary);"><span>Quantum Engineering</span><span>Started</span></div>
                         <div class="progress-bar"><div style="width:20%;"></div></div>
                     </div>
                 </div>
@@ -1508,7 +1411,7 @@
                 <h4 style="font-size:0.8rem;color:var(--secondary);">🏆 Milestones</h4>
                 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
                     <span style="font-size:0.6rem;color:var(--text-secondary);background:rgba(0,255,136,0.06);padding:4px 12px;border-radius:30px;border:1px solid rgba(0,255,136,0.15);"><i class="fas fa-check-circle" style="color:var(--success);"></i> IT Foundation: In Progress</span>
-                    <span style="font-size:0.6rem;color:var(--text-secondary);background:rgba(0,0,0,0.2);padding:4px 12px;border-radius:30px;border:1px solid var(--glass-border);"><i class="fas fa-clock"></i> Economics: Started</span>
+                    <span style="font-size:0.6rem;color:var(--text-secondary);background:rgba(0,0,0,0.2);padding:4px 12px;border-radius:30px;border:1px solid var(--glass-border);"><i class="fas fa-clock"></i> Quantum: Started</span>
                 </div>
             </div>
         </div>
@@ -1650,12 +1553,12 @@
                 body: JSON.stringify({
                     message: msg,
                     portal: "lebohang_quantum",
-                    system: "You are Luvuno Quantum Engineering — an AI tutor for Lebohang Boikhutso, a Quantum Engineer at MindTech. You are an expert in circuit design, entanglement verification, QKD, economics, business, trade, governance, and policy. Provide clear, practical answers. Use South African examples. Be encouraging. Always reference quantum-powered insights."
+                    system: "You are Luvuno Quantum Engineering — an AI tutor for Lebohang Boikhutso, a Quantum Engineer at MindTech. You are an expert in circuit design, entanglement verification, QKD, and quantum engineering. Provide clear, practical answers. Use South African examples. Be encouraging. Always reference quantum-powered insights."
                 })
             });
 
             const data = await response.json();
-            const aiReply = data.response || "Let me think about that. Ask me about quantum engineering, circuits, QKD, economics, or policy!";
+            const aiReply = data.response || "Let me think about that. Ask me about quantum engineering, circuits, QKD, or quantum computing!";
 
             typingDiv.remove();
             const aiDiv = document.createElement('div');
@@ -1730,19 +1633,17 @@
         if (e.ctrlKey && e.key === '1') { e.preventDefault(); switchSection('dashboard'); }
         if (e.ctrlKey && e.key === '2') { e.preventDefault(); switchSection('library'); }
         if (e.ctrlKey && e.key === '3') { e.preventDefault(); switchSection('chat'); }
-        if (e.ctrlKey && e.key === '4') { e.preventDefault(); switchSection('economics'); }
-        if (e.ctrlKey && e.key === '5') { e.preventDefault(); switchSection('tests'); }
-        if (e.ctrlKey && e.key === '6') { e.preventDefault(); switchSection('progress'); }
+        if (e.ctrlKey && e.key === '4') { e.preventDefault(); switchSection('tests'); }
+        if (e.ctrlKey && e.key === '5') { e.preventDefault(); switchSection('progress'); }
         if (e.key === 'Escape' && appContainer.style.display === 'block') { logout(); }
     });
 
     console.log('🚀 Lebohang Boikhutso Portal · MindTech Academy');
     console.log('   ⚛️ CHSH S=2.76 · 98.4%');
     console.log('   📚 5 Videos · 4 PDFs · 3 Tests with questions');
-    console.log('   📊 Economics Hub — 6 modules');
     console.log('   💬 Luvuno AI — Quantum Engineering Expert');
     console.log('   🔑 Password: 1234');
-    console.log('   ⌨️  Ctrl+1=Dashboard, Ctrl+2=Library, Ctrl+3=Chat, Ctrl+4=Economics, Ctrl+5=Tests, Ctrl+6=Progress');
+    console.log('   ⌨️  Ctrl+1=Dashboard, Ctrl+2=Library, Ctrl+3=Chat, Ctrl+4=Tests, Ctrl+5=Progress');
 </script>
 
 </body>
