@@ -803,6 +803,48 @@
         }
 
         /* ============================================================
+           ECONOMICS HUB
+        ============================================================ */
+        .economics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .economics-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 16px;
+            padding: 16px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .economics-card h4 {
+            font-size: 0.8rem;
+            color: var(--gold);
+        }
+
+        .economics-card p {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        .economics-card .tag {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 2px 12px;
+            border-radius: 30px;
+            background: rgba(255,215,0,0.1);
+            font-size: 0.5rem;
+            font-family: var(--font-mono);
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .economics-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================================
            FOOTER
         ============================================================ */
         .footer {
@@ -1021,7 +1063,7 @@
             <div class="glass-card" onclick="switchSection('economics')" style="cursor:pointer;">
                 <div class="card-header gold"><i class="fas fa-chart-line"></i><h3>📊 Economics Hub</h3></div>
                 <p style="font-size:0.7rem;color:var(--text-secondary);">Economics, business, trade, governance, and policy — powered by Luvuno.</p>
-                <div style="margin-top:12px;"><span class="menu-btn" style="padding:4px 14px;font-size:0.6rem;">UNISA-aligned</span></div>
+                <div style="margin-top:12px;"><span class="menu-btn" style="padding:4px 14px;font-size:0.6rem;">6 modules</span></div>
             </div>
         </div>
     </div>
@@ -1209,39 +1251,39 @@
         <div class="glass-card gold-border">
             <div class="card-header gold"><i class="fas fa-chart-line"></i><h3>📊 Economics Hub</h3></div>
             <p style="font-size:0.7rem;color:var(--text-secondary);margin-bottom:16px;">
-                UNISA-aligned economics, business, trade, governance, and policy — powered by <strong style="color:var(--gold);">Luvuno Quantum Economics</strong> and MQOS.
+                Economics, business, trade, governance, and policy — powered by <strong style="color:var(--gold);">Luvuno Quantum Economics</strong> and MQOS.
             </p>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                <div style="background:rgba(0,0,0,0.2);border-radius:16px;padding:16px;border:1px solid var(--glass-border);">
-                    <h4 style="font-size:0.8rem;color:var(--gold);">📈 Microeconomics</h4>
-                    <p style="font-size:0.65rem;color:var(--text-secondary);margin-top:8px;">Supply and demand, market structures, consumer behavior, production costs.</p>
-                    <span style="display:inline-block;margin-top:8px;padding:2px 12px;border-radius:30px;background:rgba(255,215,0,0.1);font-size:0.5rem;font-family:var(--font-mono);color:var(--gold);">UNISA · ECON 101</span>
+            <div class="economics-grid">
+                <div class="economics-card">
+                    <h4>📈 Microeconomics</h4>
+                    <p>Supply and demand, market structures, consumer behavior, production costs.</p>
+                    <span class="tag">Foundational</span>
                 </div>
-                <div style="background:rgba(0,0,0,0.2);border-radius:16px;padding:16px;border:1px solid var(--glass-border);">
-                    <h4 style="font-size:0.8rem;color:var(--gold);">🌍 Macroeconomics</h4>
-                    <p style="font-size:0.65rem;color:var(--text-secondary);margin-top:8px;">GDP, inflation, unemployment, fiscal policy, monetary policy, economic growth.</p>
-                    <span style="display:inline-block;margin-top:8px;padding:2px 12px;border-radius:30px;background:rgba(255,215,0,0.1);font-size:0.5rem;font-family:var(--font-mono);color:var(--gold);">UNISA · ECON 102</span>
+                <div class="economics-card">
+                    <h4>🌍 Macroeconomics</h4>
+                    <p>GDP, inflation, unemployment, fiscal policy, monetary policy, economic growth.</p>
+                    <span class="tag">Foundational</span>
                 </div>
-                <div style="background:rgba(0,0,0,0.2);border-radius:16px;padding:16px;border:1px solid var(--glass-border);">
-                    <h4 style="font-size:0.8rem;color:var(--gold);">📊 Statistics & Econometrics</h4>
-                    <p style="font-size:0.65rem;color:var(--text-secondary);margin-top:8px;">Data analysis, regression, hypothesis testing, economic modeling, forecasting.</p>
-                    <span style="display:inline-block;margin-top:8px;padding:2px 12px;border-radius:30px;background:rgba(255,215,0,0.1);font-size:0.5rem;font-family:var(--font-mono);color:var(--gold);">UNISA · STA 101</span>
+                <div class="economics-card">
+                    <h4>📊 Statistics & Econometrics</h4>
+                    <p>Data analysis, regression, hypothesis testing, economic modeling, forecasting.</p>
+                    <span class="tag">Data & Analysis</span>
                 </div>
-                <div style="background:rgba(0,0,0,0.2);border-radius:16px;padding:16px;border:1px solid var(--glass-border);">
-                    <h4 style="font-size:0.8rem;color:var(--gold);">🏛️ Public Economics & Policy</h4>
-                    <p style="font-size:0.65rem;color:var(--text-secondary);margin-top:8px;">Taxation, government spending, public goods, regulation, welfare economics.</p>
-                    <span style="display:inline-block;margin-top:8px;padding:2px 12px;border-radius:30px;background:rgba(255,215,0,0.1);font-size:0.5rem;font-family:var(--font-mono);color:var(--gold);">UNISA · PUB 101</span>
+                <div class="economics-card">
+                    <h4>🏛️ Public Economics & Policy</h4>
+                    <p>Taxation, government spending, public goods, regulation, welfare economics.</p>
+                    <span class="tag">Policy & Governance</span>
                 </div>
-                <div style="background:rgba(0,0,0,0.2);border-radius:16px;padding:16px;border:1px solid var(--glass-border);">
-                    <h4 style="font-size:0.8rem;color:var(--gold);">💼 International Trade & Finance</h4>
-                    <p style="font-size:0.65rem;color:var(--text-secondary);margin-top:8px;">Exchange rates, balance of payments, trade agreements, global markets.</p>
-                    <span style="display:inline-block;margin-top:8px;padding:2px 12px;border-radius:30px;background:rgba(255,215,0,0.1);font-size:0.5rem;font-family:var(--font-mono);color:var(--gold);">UNISA · INT 101</span>
+                <div class="economics-card">
+                    <h4>💼 International Trade & Finance</h4>
+                    <p>Exchange rates, balance of payments, trade agreements, global markets.</p>
+                    <span class="tag">Global Markets</span>
                 </div>
-                <div style="background:rgba(0,0,0,0.2);border-radius:16px;padding:16px;border:1px solid var(--glass-border);">
-                    <h4 style="font-size:0.8rem;color:var(--gold);">🧠 Development Economics</h4>
-                    <p style="font-size:0.65rem;color:var(--text-secondary);margin-top:8px;">Poverty, inequality, human development, sustainable growth, African economies.</p>
-                    <span style="display:inline-block;margin-top:8px;padding:2px 12px;border-radius:30px;background:rgba(255,215,0,0.1);font-size:0.5rem;font-family:var(--font-mono);color:var(--gold);">UNISA · DEV 101</span>
+                <div class="economics-card">
+                    <h4>🧠 Development Economics</h4>
+                    <p>Poverty, inequality, human development, sustainable growth, African economies.</p>
+                    <span class="tag">African Context</span>
                 </div>
             </div>
 
@@ -1697,10 +1739,10 @@
     console.log('🚀 Lebohang Boikhutso Portal · MindTech Academy');
     console.log('   ⚛️ CHSH S=2.76 · 98.4%');
     console.log('   📚 5 Videos · 4 PDFs · 3 Tests with questions');
-    console.log('   📊 Economics Hub · UNISA-aligned');
+    console.log('   📊 Economics Hub — 6 modules');
     console.log('   💬 Luvuno AI — Quantum Engineering Expert');
     console.log('   🔑 Password: 1234');
-    console.log('   ⌨️  Ctrl+1=Dashboard, Ctrl+2=Library, Ctrl+3=Chat, Ctrl+4=Economics, Ctrl+5=Tests, Ctrl=6=Progress');
+    console.log('   ⌨️  Ctrl+1=Dashboard, Ctrl+2=Library, Ctrl+3=Chat, Ctrl+4=Economics, Ctrl+5=Tests, Ctrl+6=Progress');
 </script>
 
 </body>
